@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض تقديمي: أساسيات برنامج PowerPoint</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 70px 10px 90px;
+        }
+
+        .header-bar {
+            width: 100%;
+            background-color: #b7472a;
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .header-bar h2 {
+            font-size: 16px;
+        }
+
+        .header-bar span {
+            font-size: 12px;
+        }
+
+        .slide-container {
+            width: 95%;
+            max-width: 850px;
+            min-height: 430px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            padding: 25px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            border-top: 10px solid #b7472a;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .slide-container.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-title {
+            color: #b7472a;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .main-cover {
+            text-align: center;
+        }
+
+        .main-cover h1 {
+            font-size: 28px;
+            color: #b7472a;
+            margin-bottom: 12px;
+        }
+
+        .main-cover p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .info-box {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 6px;
+            border-right: 4px solid #b7472a;
+            display: inline-block;
+            text-align: right;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style-type: none;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        ul li {
+            margin-bottom: 9px;
+            padding-right: 22px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "◀";
+            color: #b7472a;
+            position: absolute;
+            right: 0;
+            font-size: 12px;
+            top: 4px;
+        }
+
+        strong {
+            color: #174a70;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        button {
+            background-color: #b7472a;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:disabled {
+            background-color: #7f8c8d;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">
+        <h2>عرض تقديمي: أساسيات برنامج PowerPoint</h2>
+        <span>استعملي الأزرار في الأسفل للتنقل</span>
+    </div>
+
+    <!-- الشريحة 1: الغلاف -->
+    <div class="slide-container active main-cover">
+        <h1>أساسيات برنامج العروض التقديمية PowerPoint</h1>
+        <p>عرض تقديمي حول إنشاء وتنسيق وعرض الشرائح</p>
+
+        <div class="info-box">
+            <div><strong>معهد:</strong> الوطني المتخصص هاشمي مباركي - بوقطب -</div>
+            <div><strong>تحت إشراف الأستاذة:</strong> قادري</div>
+            <div><strong>إعداد الطالبتين:</strong> سهام ميلودي - عبابو بشرى</div>
+        </div>
+    </div>
+
+    <!-- الشريحة 2: المقدمة -->
+    <div class="slide-container">
+        <h2 class="slide-title">المقدمة</h2>
+        <p>
+            يُعد برنامج PowerPoint من أهم البرامج المستعملة في مجال الحاسوب،
+            حيث يساعد على إنشاء العروض التقديمية بطريقة منظمة وجذابة.
+            ويعتمد على الشرائح التي تحتوي على النصوص والصور والجداول
+            والرسوم البيانية، مما يسهّل شرح الدروس وتقديم الأبحاث
+            وعرض المعلومات أمام الجمهور.
+        </p>
+        <br>
+        <p>
+            وفي هذا العرض سنتعرف على أهمية برنامج PowerPoint، واستعمالاته،
+            ومكونات الشرائح، وخطوات إنشاء عرض تقديمي ناجح، بالإضافة إلى
+            بعض النصائح التي تساعد على تقديم عرض واضح ومحترف.
+        </p>
+    </div>
+
+    <!-- الشريحة 3 -->
+    <div class="slide-container">
+        <h2 class="slide-title">1. التعامل مع الشرائح</h2>
+        <ul>
+            <li><strong>إضافة شريحة جديدة:</strong> لإدراج صفحات جديدة حسب حاجة العرض.</li>
+            <li><strong>تكرار شريحة:</strong> لنسخ شريحة بنفس التصميم والمحتوى.</li>
+            <li><strong>تغيير أبعاد الشريحة:</strong> ضبط القياس مثل 16:9 أو 4:3.</li>
+            <li><strong>حذف أو ترتيب الشرائح:</strong> سحب الشرائح لتغيير تسلسلها أو حذف الزائدة.</li>
+        </ul>
+    </div>
+
+    <!-- الشريحة 4 -->
+    <div class="slide-container">
+        <h2 class="slide-title">2. الشرائح الرئيسية والسمات والخلفيات</h2>
+        <ul>
+            <li><strong>السمات:</strong> قوالب جاهزة توفر ألوانًا وخطوطًا متناسقة.</li>
+            <li><strong>الخلفية:</strong> تغيير لون الخلفية أو وضع صورة أو تدرج لوني.</li>
+            <li><strong>الشريحة الرئيسية:</strong> لتعديل التصميم العام وإضافة شعار أو رقم الصفحة.</li>
+        </ul>
+    </div>
+
+    <!-- الشريحة 5 -->
+    <div class="slide-container">
+        <h2 class="slide-title">3. إثراء محتوى الشرائح</h2>
+        <ul>
+            <li><strong>النصوص:</strong> كتابة العناوين والنقاط الأساسية بخط واضح.</li>
+            <li><strong>الصور والفيديوهات:</strong> لتوضيح الأفكار بصريًا.</li>
+            <li><strong>النصوص الفنية WordArt:</strong> لعناوين مزخرفة ومميزة.</li>
+            <li><strong>الجداول والمخططات:</strong> لتنظيم البيانات والمقارنات.</li>
+        </ul>
+    </div>
+
+    <!-- الشريحة 6 -->
+    <div class="slide-container">
+        <h2 class="slide-title">4. الانتقالات والحركات</h2>
+        <ul>
+            <li><strong>الانتقالات:</strong> مؤثرات تظهر عند الانتقال من شريحة إلى أخرى.</li>
+            <li><strong>الحركات:</strong> مؤثرات على العناصر داخل الشريحة الواحدة.</li>
+            <li><strong>نصيحة:</strong> استعمال حركات بسيطة وعدم الإكثار منها.</li>
+        </ul>
+    </div>
+
+    <!-- الشريحة 7 -->
+    <div class="slide-container">
+        <h2 class="slide-title">5. عرض الشرائح ووضع التقديم</h2>
+        <ul>
+            <li><strong>وضع عرض الشرائح:</strong> عرض الشرائح بملء الشاشة أمام الجمهور.</li>
+            <li><strong>وضع مقدم العرض:</strong> شاشة خاصة للمتحدث تعرض الشريحة الحالية والقادمة والملاحظات.</li>
+        </ul>
+    </div>
+
+    <!-- الشريحة 8 -->
+    <div class="slide-container">
+        <h2 class="slide-title">6. الطباعة</h2>
+        <ul>
+            <li><strong>طباعة شريحة كاملة:</strong> طباعة كل شريحة في ورقة مستقلة.</li>
+            <li><strong>طباعة نشرات:</strong> وضع عدة شرائح في صفحة واحدة.</li>
+            <li><strong>طباعة الملاحظات:</strong> طباعة الشريحة مع الملاحظات الشخصية.</li>
+        </ul>
+    </div>
+
+    <!-- الشريحة 9: الخاتمة -->
+    <div class="slide-container main-cover">
+        <h1>شكراً على حسن الإصغاء والمتابعة</h1>
+        <p>شكراً على حسن الاستماع</p>
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" onclick="changeSlide(-1)" disabled>◀ السابقة</button>
+        <span class="slide-counter" id="slideNumber">1 / 9</span>
+        <button id="nextBtn" onclick="changeSlide(1)">التالية ▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide-container');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideNumber = document.getElementById('slideNumber');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+            slideNumber.textContent = (currentSlide + 1) + " / " + slides.length;
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            updateSlide();
+        }
+    </script>
+
+</body>
+</html>
